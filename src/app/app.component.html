@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="header">
+    <p>Github Users Search</p>
+  </div>
+  <div class="content">
+    <div class="search-bar">
+      <form [formGroup]="formSearch">
+        <div class="form-item">
+          <label for="search1">Search1:&nbsp;</label>
+          <input id="search1" formControlName="search1">
+        </div>
+        <div class="form-item">
+          <label for="search2">Search2:&nbsp;</label>
+          <input id="search2" formControlName="search2">
+        </div>
+        <div class="form-item">
+          <label for="search3">Search3:&nbsp;</label>
+          <input id="search3" formControlName="search3">
+        </div>
+      </form>
+    </div>
+    <div class="user-list_wrapper">
+      <app-user-item *ngFor="let user of users" [user]="user" (click)="onClickUser(user.html_url)">
+      </app-user-item>
+    </div>
+  </div>
+</div>

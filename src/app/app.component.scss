@@ -1,0 +1,53 @@
+input {
+  padding: 5px 5px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+
+  .header {
+    flex-grow: 0;
+    flex-shrink: 0;
+    height: 60px;
+    background-color: rgb(68, 159, 250);
+    text-align: center;
+    font-size: 1.2rem;
+  }
+
+  .content {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    min-height: 1px;
+
+    .search-bar form {
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      flex-direction: row;
+      flex-grow: 0;
+    }
+
+    .form-item {
+      padding: 10px;
+    }
+
+    .user-list_wrapper {
+      display: flex;
+      flex-grow: 1;
+      flex-direction: column;
+      overflow-y: auto;
+      height: 100%;
+      min-height: 1px;
+      max-width: 400px;
+      width: 400px;
+    }
+  }
+}

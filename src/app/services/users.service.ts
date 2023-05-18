@@ -24,7 +24,7 @@ export class UsersService {
 
     return this.http.get(`${this.baseURL}/search/users?q=${queryString}`, {
       headers: {
-        Authorization: 'Bearer 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',
+        Authorization: 'Bearer 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',
         'X-GitHub-Api-Version': '2022-11-28',
       },
     });

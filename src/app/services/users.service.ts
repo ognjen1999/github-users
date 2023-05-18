@@ -1,12 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment.development';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UsersService {
-  baseURL = 'https://api.github.com';
-
   constructor(private http: HttpClient) {}
 
   searchUsers({
@@ -22,11 +21,14 @@ export class UsersService {
       [search1, search2, search3]?.filter((e) => e)?.join(' ')
     );
 
-    return this.http.get(`${this.baseURL}/search/users?q=${queryString}`, {
-      headers: {
-        Authorization: 'Bearer github_access_token',
-        'X-GitHub-Api-Version': '2022-11-28',
-      },
-    });
+    return this.http.get(
+      `${environment.baseURL}/search/users?q=${queryString}`,
+      {
+        headers: {
+          Authorization: `Bearer ${environment.accessToken}`,
+          'X-GitHub-Api-Version': '2022-11-28',
+        },
+      }
+    );
   }
 }
